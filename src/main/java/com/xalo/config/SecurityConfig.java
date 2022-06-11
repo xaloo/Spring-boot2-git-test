@@ -1,4 +1,4 @@
-package com.xalo;
+package com.xalo.config;
 
 import javax.annotation.PostConstruct;
 
