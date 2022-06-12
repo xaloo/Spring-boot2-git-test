@@ -13,12 +13,17 @@ public class EjemplosLambda {
 	private static final Logger LOGGER = LogManager.getLogger(EjemplosLambda.class);
 	
 	 public static void main(String[] args) {
+		 
+		 /* Las funciones lambda permiten implementar interfaces con una única función pasándole directamente la implementación 
+		  * en el param.*/
+		 
+		 
 	        List<String> names = Arrays.asList("abc1", "zzz", "chicken");
 	        // sort alphabetically
 	        Collections.sort(names);
-	        System.out.println("names sorted alphabetically  >>");
-	        System.out.println(names);
-	        System.out.println();
+	        LOGGER.info("names sorted alphabetically  >>");
+	        LOGGER.info(names);
+	        LOGGER.info("");
 
 	        // using anonymous classes
 	        Collections.sort(names, new Comparator<String>() {

@@ -4,13 +4,9 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 
 @Entity
@@ -20,8 +16,6 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = -7995506219939261460L;
 
 	@Id
-	@GenericGenerator(name = "usuario_sequence", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {@Parameter(name = "sequence_name", value = "usuario_sequence")})
-	@GeneratedValue(generator = "usuario_sequence")
 	private long id;
 	@Size(max = 60)
 	private String login;
