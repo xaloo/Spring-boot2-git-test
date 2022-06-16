@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -15,8 +16,7 @@ public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = -7995506219939261460L;
 
-	@Id
-	private long id;
+	private @Id @GeneratedValue Long id;
 	@Size(max = 60)
 	private String login;
 	@Size(max = 60)
@@ -27,17 +27,17 @@ public class Usuario implements Serializable {
 	}
 
 	/* GETTERS AND SETTERS */
+	
+	public String getLogin() {
+		return login;
+	}
 
-    public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-    public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getLogin() {
-		return login;
 	}
 
 	public void setLogin(String login) {

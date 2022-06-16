@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,8 +18,7 @@ public class Nota implements Serializable {
 
 	private static final long serialVersionUID = -1935655773050935035L;
 	
-	@Id
-	private long id;
+	private @Id @GeneratedValue Long id;
 	private BigDecimal nota;
 	@ManyToOne()
     @JoinColumn(name = "fkserie")
@@ -28,12 +28,12 @@ public class Nota implements Serializable {
 	}
 
 	/* GETTERS AND SETTERS */
-
-    public long getId() {
+    
+    public Long getId() {
 		return id;
 	}
 
-    public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -10,4 +10,5 @@ import com.xalo.model.entity.Serie;
 public interface NotaRepository extends CrudRepository<Nota, Long> {
 
 	List<Nota> findBySerie(Serie serie);
+
 }

@@ -7,8 +7,10 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xalo.model.dao.NotaJpaRepository;
 import com.xalo.model.dao.SerieJpaRepository;
 import com.xalo.model.dao.SerieRepository;
 import com.xalo.model.entity.Serie;
@@ -24,6 +26,18 @@ public class SerieController {
 	
 	@Autowired
 	private SerieJpaRepository serieJpaRepository; 
+	
+	@Autowired
+	private NotaJpaRepository notaJpaRepository; 
+	
+	@GetMapping("/nota") 
+	@ResponseBody
+	public void obtenerNotaSerie(@RequestParam(name="nombre", required = true) String nombre) {
+		Iterable<Serie> listaSeries = serieJpaRepository.findAll();
+		for (Serie serie: listaSeries) {
+			LOGGER.info("Año: "+ serie.getAnyo() +" Nombre: "+serie.getNombre());
+		} 
+	}
 	
 	@GetMapping("/listaSeries") 
 	@ResponseBody
