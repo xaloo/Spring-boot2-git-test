@@ -5,11 +5,14 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
@@ -20,8 +23,10 @@ public class Nota implements Serializable {
 	
 	private @Id @GeneratedValue Long id;
 	private BigDecimal nota;
-	@ManyToOne()
+	
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fkserie")
+	@JsonIgnoreProperties("notas") //Needed to ignore Json loop
     private Serie serie;
 
     public Nota() {

@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name = "serie")
@@ -26,8 +28,9 @@ public class Serie implements Serializable {
 	private String nombre;
 	private int anyo;
 	
-	/* Listas*/
-	@OneToMany(mappedBy="nota")
+	/* Listas Lazy*/
+	@OneToMany(mappedBy="serie", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("serie") //Needed to ignore Json loop
 	private List<Nota> notas;
 	
     public Serie() {
