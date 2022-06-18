@@ -30,7 +30,7 @@ public class Serie implements Serializable {
 	
 	/* Listas Lazy*/
 	@OneToMany(mappedBy="serie", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("serie") //Needed to ignore Json loop
+	@JsonIgnoreProperties("serie") //Needed to ignore Json loop (bidireccional oneToMany)
 	private List<Nota> notas;
 	
     public Serie() {

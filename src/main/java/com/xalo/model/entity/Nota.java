@@ -26,7 +26,7 @@ public class Nota implements Serializable {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fkserie")
-	@JsonIgnoreProperties("notas") //Needed to ignore Json loop
+	@JsonIgnoreProperties("notas") //Needed to ignore Json loop (bidireccional oneToMany)
     private Serie serie;
 
     public Nota() {
