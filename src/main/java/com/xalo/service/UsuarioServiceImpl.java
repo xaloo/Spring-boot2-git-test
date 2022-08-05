@@ -28,7 +28,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		List<Usuario> usuarios_list = usuarioRepository.findByLogin(username);
 		if (!usuarios_list.isEmpty() && usuarios_list.size() > 0) {
 			Usuario usuario = usuarios_list.get(0);
-			//TODO Aquí buscaremos en una tabla de credenciales BBDD
+			//TODO Aquí buscaremos en una tabla de credenciales BBDD 
 			List<GrantedAuthority> roles = new ArrayList<GrantedAuthority>();
 			roles.add(new SimpleGrantedAuthority("ADMIN"));
 			userDet = new User(usuario.getLogin(),usuario.getPassword(), roles);
