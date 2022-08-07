@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xalo.model.dao.NotaJpaRepository;
 import com.xalo.model.dao.SerieJpaRepository;
 import com.xalo.model.dao.SerieRepository;
 import com.xalo.model.entity.Serie;
@@ -26,9 +25,6 @@ public class SerieController {
 	
 	@Autowired
 	private SerieJpaRepository serieJpaRepository; 
-	
-	@Autowired
-	private NotaJpaRepository notaJpaRepository; 
 	
 	@GetMapping("/nota") 
 	@ResponseBody
