@@ -31,7 +31,7 @@ public class SerieController {
 	public void obtenerNotaSerie(@RequestParam(name="nombre", required = true) String nombre) {
 		Iterable<Serie> listaSeries = serieJpaRepository.findAll();
 		for (Serie serie: listaSeries) {
-			LOGGER.info("Año: "+ serie.getAnyo() +" Nombre: "+serie.getNombre());
+			LOGGER.info("Año: "+ serie.getAnyo() +" Nombre: "+serie.getNombre()); 
 		} 
 	}
 	
