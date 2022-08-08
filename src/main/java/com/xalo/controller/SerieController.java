@@ -33,7 +33,6 @@ public class SerieController {
 		for (Serie serie: listaSeries) {
 			LOGGER.info("Año: "+ serie.getAnyo() +" Nombre: "+serie.getNombre()); 
 			LOGGER.info("test");
-			LOGGER.info("Prueba para tener conflicto en el commit");
 		} 
 	}
 	
